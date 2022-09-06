@@ -4,39 +4,108 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="<?php echo base_url()?>resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="<?=base_url()?>resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      :root {
+        --bs-primary: #C8A27A !important;
+      }
+      .hero-background {
+        --x: 0;
+        --y: 0;
+        --bg-img: '';
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: var(--x) var(--y);
+        width: 100%;
+        height: 100vh;
+        }
+        @media (min-width: 576px) {
+            .hero-background {
+                height: 40vh;
+              background-size: 110% auto;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero-background {
+                height: 50vh;
+            }
+        }
+        @media (min-width:1100px){
+            .hero-background {
+                height: 100vh;
+            }
+        }
+        @media (min-width:1400px){
+            .hero-background {
+                height: 100vh;
+            }
+        }
+      .btn-primary{
+        background-color: #C8A27A;
+        border-color: #C8A27A
+      }
+      .btn-primary:hover{
+        background-color: #C8A27ADD;
+        border-color: #C8A27ADD
+      }
+      .border{
+        --bs-border-color: #F3F4F6
+      }
+      .img-card{
+        position: relative;
+      }
+      .img-card .hover{
+        color: white;
+        display: none;
+        justify-content: center;
+        align-items:center;
+        position: absolute;
+        top: 0;
+        bottom:0;
+        left:0;
+        right:0;
+        background-color: #3334;
+      }
+      .img-card:hover .hover{
+        display: flex;
+        gap: .5rem
+      }
+      .nav-link:focus, .nav-link:hover {
+        --bs-nav-link-hover-color: #C8A27A
+      }
+    </style>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+      <div class="container position-relative py-2">
+        <a class="navbar-brand position-absolute" href="#"><img src="<?php echo base_url('resources/img/logo.png');?>" height="55px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-link" aria-current="page" href="#about">About</a>
+            <a class="nav-link" href="#our-coffee">Our Coffee</a>
+            <a class="nav-link" href="#instagram">Instagram</a>
+            <a class="nav-link" href="#location">Location</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </div>
+        </div>
+        <div class="position-absolute d-flex align-items-center" style="right:0; top: 0; bottom:0">
+          <a class="btn btn-primary rounded-0" href="https://grandjatijunction.sawala.xyz/contact/"> 
+            Order Now        
+          </a>
+        </div>
+      </div>
+    </nav>
 
  <!-- hero -->
  <header class="container pt-5">
       <h1 class="mb-5 fw-bolder text-uppercase text-center">Boost your day with <br> a cup of coffee</h1>
       <div class="d-flex justify-content-center">
-        <img src="<?php echo base_url('resources/img/hero.png');?>">
+        <img src="<?php echo base_url('resources/img/hero2.png');?>">
       </div>
     </header>
  <!-- About -->
